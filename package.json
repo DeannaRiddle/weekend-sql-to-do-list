@@ -4,7 +4,8 @@
   "description": "Within this application you will be able store your to-do list digitally. The To-Do-List Keeper will help you organize all the tasks you need to complete.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,10 @@
   "dependencies": {
     "body": "^5.1.0",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "node": "^13.12.0",
-    "parser": "^0.1.4"
-   
-  }
+    "parser": "^0.1.4",
+    "pg": "^8.0.0"
+  },
+  "devDependencies": {}
 }
