@@ -38,3 +38,27 @@ router.post("/", (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// PUT
+router.put("/:id", (req, res) => {
+  const taskId = req.params.id;
+  const taskComplete = req.body;
+  const queryText = `UPDATE "tasks" SET "tasks"=$1, "date_in"=$2, "due_date"=$3 WHERE "id"=$4;`;
+  pool
+    .query(queryText, [
+      taskComplete.tasks,
+      taskComplete.date_in,
+      taskComplete.due_date,
+      taskId,
+    ])
+    .then((responseDB) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+    });
+});
+
+//DELETE
+
+module.exports = router;

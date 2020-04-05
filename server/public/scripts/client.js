@@ -15,5 +15,24 @@ $(document).ready(function () {
 function setupClickListeners() {
   $("#addNewTask").on("click", function () {
     console.log("in addNewTask on click");
+
+    const newTask = {
+      task: $("#newTask").val(),
+      Date_In: $("#dateIn").val(),
+      Due_Date: $("#dueDate").val(),
+    };
+    console.log(newTask);
+    saveTask(newTask);
+
+    $("#newTask").val(""), $("#dateIn").val(""), $("#dueDate").val("");
   });
+}
+
+function getTask() {
+  console.log("in getTask");
+  $.ajax({
+    method: "GET",
+    url: "/tasks",
+  })
+  .then((response) =)
 }
