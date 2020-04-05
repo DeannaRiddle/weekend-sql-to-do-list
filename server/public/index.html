@@ -8,5 +8,39 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>TO-DO-TASK-APP</h1>
+    </header>
+    <section id="newTask">
+      <h2>ADD TASKS</h2>
+      <input type="text" id="new-task" placeholder="Task" />
+      <input type="date" id="date-in" placeholder="Date" />
+      <input type="date" id="due-date" placeholder="Due Date" />
+      <button type="button" id="addNewTask">Add Task</button>
+    </section>
+    <section>
+      <h2>TO-DO-LIST</h2>
+      <table>
+        <thead>
+          <tr></tr>
+          <tr></tr>
+          <tr>
+            <th></th>
+            <th>Task</th>
+            <th></th>
+            <th>Date Entered</th>
+            <th></th>
+            <th>Due Date</th>
+            <th></th>
+            <th>Complete</th>
+            <th></th>
+            <th>Delete</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="viewTasks"></tbody>
+      </table>
+    </section>
+  </body>
 </html>
