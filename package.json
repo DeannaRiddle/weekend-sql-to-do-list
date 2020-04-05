@@ -1,0 +1,25 @@
+{
+  "name": "weekend-sql-to-do-list-master",
+  "version": "1.0.0",
+  "description": "Within this application you will be able store your to-do list digitally. The To-Do-List Keeper will help you organize all the tasks you need to complete.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeannaRiddle/weekend-sql-to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeannaRiddle/weekend-sql-to-do-list/issues"
+  },
+  "homepage": "https://github.com/DeannaRiddle/weekend-sql-to-do-list#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.17.1",
+    "node": "^13.12.0",
+    "parser": "^0.1.4"
+  }
+}

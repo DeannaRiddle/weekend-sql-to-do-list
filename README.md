@@ -1,9 +1,29 @@
-# Project Name
+# To-Do-List Keeper
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Within this application you will be able store your to-do list digitally. The To-Do-List Keeper will help you organize all the tasks you need to complete.
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+The guest will enter each "To-Do" task along with the date entered, and due date. Guests may then click the 'Complete' button when the task is completed. Or the guest may delete the task off the list when record is no longer necessary.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Usage
+
+1. 2. 3. 4.
+
+## Built With
+
+    * JavaScript
+    * Node
+    * Express
+    * Posico
+    * Postman
+
+## License
+
+## Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
+
+## Support
+
+If you have any issues or suggestions, Please feel free to email me at lriddle.deanna@gmail.com.
