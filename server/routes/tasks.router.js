@@ -4,31 +4,15 @@ const pool = require("../modules/pool");
 
 // DB CONNECTION
 
-// GET
-router.get("/", (req, res) => {
-  const queryText = `SELECT * FROM "tasks" ORDER BY "due_date" DESC;`;
-  pool
-    .query(queryText)
-    .then((responseDB) => {
-      const dbRows = responseDB.rows;
-      console.table(dbRows);
-      res.send(dbRows);
-    })
-    .catch((err) => {
-      console.log("ERROR", err);
-      res.sendStatus(500);
-    });
-});
-
 // POST
 router.post("/", (req, res) => {
   console.log(`In /tasks POST with`, req.body);
 
   const taskToAdd = req.body;
-  const queryText = `INSERT INTO "tasks" ("task", "date_in", "due_date")
+  const queryText = `INSERT INTO "tasks" ("task", "date_in", "importance")
                         VALUES ($1, $2, $3);`;
   pool
-    .query(queryText, [taskToAdd.task, taskToAdd.date_in, taskToAdd.due_date])
+    .query(queryText, [taskToAdd.task, taskToAdd.date_in, taskToAdd.importance])
     .then((responseFromDatabase) => {
       console.log(responseFromDatabase);
       res.sendStatus(201);
@@ -39,16 +23,32 @@ router.post("/", (req, res) => {
     });
 });
 
+// GET
+router.get("/", (req, res) => {
+  const queryText = `SELECT * FROM "tasks" ORDER BY "importance" DESC;`;
+  pool
+    .query(queryText)
+    .then((responseDB) => {
+      const dbRows = responseDB.rows;
+      console.table(dbRows);
+      res.send(dbRows);
+    })
+    .catch((err) => {
+      console.warn("ERROR", err);
+      res.sendStatus(500);
+    });
+});
+
 // PUT
 router.put("/:id", (req, res) => {
   const taskId = req.params.id;
   const taskComplete = req.body;
-  const queryText = `UPDATE "tasks" SET "tasks"=$1, "date_in"=$2, "due_date"=$3 WHERE "id"=$4;`;
+  const queryText = `UPDATE "tasks" SET "tasks"=$1, "date_in"=$2, "importance"=$3 WHERE "id"=$4;`;
   pool
     .query(queryText, [
       taskComplete.tasks,
       taskComplete.date_in,
-      taskComplete.due_date,
+      taskComplete.importance,
       taskId,
     ])
     .then((responseDB) => {
@@ -59,6 +59,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-//DELETE
+//Delete
+router.delete("/", (req, res) => {});
 
 module.exports = router;
