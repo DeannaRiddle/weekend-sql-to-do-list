@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO-TASK-APP</title>
     <link rel="stylesheet" href="styles/style.css" />
     <script src="vendors/jquery.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
-
-    <title>TO-DO-TASK-APP</title>
   </head>
   <body>
     <header>
@@ -16,10 +15,12 @@
     </header>
     <section id="newTask">
       <h2>ADD TASKS</h2>
-      <input type="text" id="newTask" placeholder="Task" />
-      <input type="date" id="dateIn" placeholder="Date" />
-      <input type="text" id="importance" placeholder="Importance" />
-      <button type="button" id="addNewTask">Add Task</button>
+      <form id="js-submit-task">
+        <input type="text" id="js-input-newTask" placeholder="Task" />
+        <input type="date" id="js-input-dateIn" placeholder="Date" />
+        <input type="text" id="js-input-importance" placeholder="Importance" />
+        <button type="button" id="addNewTask">Add Task</button>
+      </form>
     </section>
     <section>
       <h2>TO-DO-LIST</h2>
